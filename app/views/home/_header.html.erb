@@ -1,0 +1,85 @@
+ <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+   
+   <%= link_to 'Hardware Shop', root_path, class:"navbar-brand"%>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+       
+        <li class="nav-item">
+           <%= link_to 'Products', products_path, class:"nav-link"%>
+        </li>
+       
+
+       
+       
+       
+        <% if current_user && current_user.admin %>
+
+
+         
+
+        
+         
+
+          <li class="nav-item">
+          <%= link_to 'Edit Profile', edit_user_registration_path, class:"nav-link"%>
+          </li>
+
+             <li class="nav-item">
+          <%= link_to 'Sign out', destroy_user_session_path,method: :delete, class:"nav-link"%>
+          </li>
+
+       
+
+        <% elsif current_user %>  
+
+       
+         <li class="nav-item">
+           <%= link_to 'Products', products_path, class:"nav-link"%>
+        </li>
+
+          <li class="nav-item">
+          <%= link_to 'Edit Profile', edit_user_registration_path, class:"nav-link"%>
+          </li>
+         
+          <li class="nav-item">
+          <%= link_to 'Sign out', destroy_user_session_path,method: :delete, class:"nav-link"%>
+          </li>
+         
+        <% else %>
+          <li class="nav-item">
+          <%= link_to 'Sign Up', new_user_registration_path, class:"nav-link"%>
+          </li>
+
+          <li class="nav-item">
+          <%= link_to 'Sign In', new_user_session_path, class:"nav-link"%>
+          </li>
+
+         
+         <% end %>
+
+       
+       
+       
+      </ul>
+     
+    </div>
+  
+</nav>
+</div>
+<style> 
+      body {
+        background-image: url("https://www.ict-solutions-events.com/wp-content/uploads/2020/03/abstract-light-technology-lines-art-background-and-space-vector.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+        }
+      </style>
+
+
+
+
